@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    :root {
+      --pink: #ff4081;
+    }
+    .dark-mode{
+      filter:invert(1) hue-rotate(180deg);
+    }
+
+    .bs-example {
+      margin: 0px;
+    }
+
+    .navbar-brand {
+      font-size: 20px;
+      font-family: sans-serif;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 0.4em;
+      width: 0%;
+      background-color: var(--pink);
+      transition: all ease-in-out 0.6s;
+    }
+
+    .nav-link:first-child:hover::after {
+      width: 3.5%;
+    }
+
+    .nav-link:nth-child(2):hover::after {
+      width: 4%;
+    }
+
+    .nav-link:nth-child(3):hover::after {
+      width: 4%;
+    }
+
+    .nav-link:nth-child(4):hover::after {
+      width: 4%;
+    }
+
+    .nav-link:hover {
+      background: linear-gradient(to right, #00093c, #2d0b00);
+    }
+    #icon{
+      width:30px;
+      cursor:pointer;
+      background:red;
+    }
+    :root{
+      --primary-color:#edf2fc;
+      --secondary-color:#212121;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="bs-example">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="font-family: poppins;background:#345678">
+      <a href="/" class="navbar-brand">ECHO HEALTH</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav">
+          <a href="/" class="nav-item nav-link" style="color:#fff;font-size:20px;font-family:poppins">Home</a>
+          <a href="/adminclick" class="nav-item nav-link"
+            style="color:white;font-size:20px;font-family:poppins">Admin</a>
+          <a href="/doctorclick" class="nav-item nav-link"
+            style="color:white;font-size:20px;font-family:poppins">Doctor</a>
+          <a href="/patientclick" class="nav-item nav-link"
+            style="color:white;font-size:20px;font-family:poppins">Patient</a>
+        </div>
+
+        <div class="navbar-nav">
+          <a href="/aboutus" class="nav-item nav-link" style="color:white;font-size:20px;font-family:poppins;">About
+          </a>
+          <a href="/" class="nav-item nav-link" style="color:white;font-size:20px;font-family:poppins">Model</a>
+          <a href="/contactus" class="nav-item nav-link" style="color:white;font-size:20px;font-family:poppins">Contact
+          </a>
+          <br>
+          <img id="icon" src="{% static "images/moon.png" %}"  alt="">
+        </div>
+      </div>
+      <br><br>
+    </nav>
+    <br>
+  </div>
+  <script>
+    var icon=document.getElementById('icon');
+    icon.onclick=function(){
+      document.body.classList.toggle('dark-mode');
+      if(document.body.classList.contains('dark-mode')){
+        icon.src="{% static "images/sun.png" %}";
+      }
+      else{
+        icon.src="{% static "images/moon.png" %}";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

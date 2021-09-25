@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: 30px;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+
+    button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    button:hover,
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      padding: 10px;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    a {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="grid-container">
+    <div class="grid-item">
+      <div class="card">
+        <img src="{% static "images/admin.png" %}" alt="John" style="width:100%">
+        <h3 class="title" style="color:#00093c">ADMIN</h3>
+        <p><button onclick="window.location.href='/adminclick'"><a href="/adminclick">View</a></button></p>
+      </div>
+
+    </div>
+
+    <div class="grid-item" style="width:370px;">
+      <div class="card">
+        <img src="{% static "images/doctor.png" %}" alt="John" style="width:100%">
+        <h3 class="title" style="color:#00093c">DOCTOR</h3>
+        <p><button onclick="window.location.href='/doctorclick'"><a href="/doctorclick">View</a></button></p>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="card">
+        <img src="{% static "images/patient.jpg" %}" alt="John" style="width:100%">
+        <h3 class="title" style="color:#00093c">PATIENT</h3>
+        <p><button onclick="window.location.href='/patientclick'"><a href="/patientclick">View</a></button></p>
+      </div>
+    </div>
+  </div>
+  
+  
+
+</body>
+
+</html>
